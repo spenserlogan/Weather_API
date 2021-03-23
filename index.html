@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel= "stylesheet" type= "text" href= "./Assets/style.css"/>
+    <title>Weather</title>
+</head>
+
+<header>
+    <div class = "headerInfo">
+        <div class = "jumbotron">
+            <div class = "container">
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-3 col-sm-12" id= "sideBarE">
+                <div class = "input-group mb-3">
+                    <input type= "text" placeholder= "city" class= "form-control search-input" id= "citySearch">
+                    <button type= "button" class= "btn btn-primary" id= "search-btn" onclick = "inputSearchBtn()">Search City</button>
+                </div>
+                <div class= "cityList flex-direction" id= "cityListE">
+
+                </div>
+            </div>
+        </div>
+        <div class= "col" id= "currentWeather">
+            <div class= "container col-mb-3 card-body" id= "currentCity">
+                <div class= "row d-flex justify-content-around">
+                    <div class= "col">
+                        <span class= "icon-container"></span>
+                        <h1 class= "display-3" id= "cityNameE"></h1>
+                    </div>
+                    <div class= "col text-right">
+                        <h2 id= "currentDateE"></h2>
+                    </div>
+                </div>
+                <div class= "row text-center align-bottom">
+                    <div class= "col">
+                        <h3>Temperature:</h3>
+                        <h4 id= "cityTempE"></h4>
+                    </div>
+                    <div class= "col">
+                        <h3>Humidity:</h3>
+                        <h4 id= "cityHumidityE"></h4>
+                    </div>
+                    <div class= "col">
+                        <h3>Windspeed:</h3>
+                        <h4 id= "cityWindspeedE"></h4>
+                    </div>
+                    <div class= "col">
+                        <h3>UV Index:</h3>
+                        <h4 id= "cityUVE"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class= "container bg-dark text-center" id= "forecastHeader">
+                <h1 class= "display-5 text-light">Five Day Forecast</h1>
+            </div>
+            <div class= "row five-day-card pt-3 justify-content-around" id= "fiveDayCard">
+                <div class="m-2">
+                    <div class="card bg-primary p-4 text-center">
+                        <h5 class="text-light text-center" id="dayOne"></h5>
+                        <span id="dayOneImg"></span>
+                        <h5 class="small text-light text-center">Temp. <span id="dayOneTemp"></span>ºF</h5>
+                        <h5 class="small text-light text-center">Hum. <span id="dayOneHum"></span>&percnt;</h5>
+                    </div>
+                </div>
+                <div class="m-2">
+                    <div class="card bg-primary p-4 text-center">
+                        <h5 class="text-light text-center" id="dayTwo"></h5>
+                        <span id="dayTwoImg"></span>
+                        <h5 class="small text-light text-center">Temp. <span id="dayTwoTemp"></span>ºF</h5>
+                        <h5 class="small text-light text-center">Hum. <span id="dayTwoHum"></span>&percnt;</h5>
+                    </div>
+                </div>
+                <div class="m-2">
+                    <div class="card bg-primary p-4 text-center">
+                        <h5 class="text-light text-center" id="dayThree"></h5>
+                        <span id="dayThreeImg"></span>
+                        <h5 class="small text-light text-center">Temp. <span id="dayThreeTemp"></span>ºF</h5>
+                        <h5 class="small text-light text-center">Hum. <span id="dayThreeHum"></span>&percnt;</h5>
+                    </div>
+                </div>
+                <div class="m-2">
+                    <div class="card bg-primary p-4 text-center">
+                        <h5 class="text-light text-center" id="dayFour"></h5>
+                        <span id="dayFourImg"></span>
+                        <h5 class="small text-light text-center">Temp. <span id="dayFourTemp"></span>ºF</h5>
+                        <h5 class="small text-light text-center">Hum. <span id="dayFourHum"></span>&percnt;</h5>
+                    </div>
+                </div>
+                <div class="m-2">
+                    <div class="card bg-primary p-4 text-center">
+                        <h5 class="text-light text-center" id="dayFive"></h5>
+                        <span id="dayFiveImg"></span>
+                        <h5 class="small text-light text-center">Temp. <span id="dayFiveTemp"></span>ºF</h5>
+                        <h5 class="small text-light text-center">Hum. <span id="dayFiveHum"></span>&percnt;</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js" integrity="sha512-Dz4zO7p6MrF+VcOD6PUbA08hK1rv0hDv/wGuxSUjImaUYxRyK2gLC6eQWVqyDN9IM1X/kUA8zkykJS/gEVOd3w==" crossorigin="anonymous"></script>
+    <script src = "Assets/script.js"></script>  
+</body>
+</html>
